@@ -70,52 +70,28 @@
 }
 
 .bd-1px() {
-  position: relative;
+
   &:before {
-      .setLine();
+    .setLine();
   }
 }
 
-.bd-1px-t() {
+.bd-1px-t,
+.bd-1px-b,
+.bd-1px-tb,
+.bd-1px-l,
+.bd-1px-r {
   position: relative;
+}
+
+.bd-1px-t {
   &:before {
-      .setTopLine();
-  }
-}
-
-.bd-1px-b() {
-  position: relative;
-  &:after {
-      .setBottomLine();
-  }
-}
-
-.bd-1px-tb() {
-  position: relative;
-  &:before {
-      .setTopLine();
-  }
-  &:after {
-      .setBottomLine();
-  }
-}
-
-.bd-1px-l() {
-  position: relative;
-  &:before {
-      .setLeftLine();
-  }
-}
-
-.bd-1px-r() {
-  position: relative;
-  &:after {
-      .setRightLine();
+    .setTopLine();
   }
 }
 
 // 箭头
-._setArrow(@arrowsize, @borderColor, @borderWidth){
+._setArrow(@arrowsize, @borderColor, @borderWidth) {
   display: inline-block;
   height: @arrowsize;
   width: @arrowsize;
@@ -124,30 +100,30 @@
   border-style: solid;
 }
 
-.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction = top) {
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =top) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
-  transform: matrix(0.71,-0.71,0.71,0.71,0,0); // rotate(-45deg)
+  transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0); // rotate(-45deg)
 }
 
-.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = right) {
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =right) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
-  transform: matrix(0.71,0.71,-0.71,0.71,0,0); // rotate(45deg);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0); // rotate(45deg);
 
   position: relative;
   top: -2px;
 }
 
-.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = down) {
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =down) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
-  transform: matrix(-0.71,0.71,-0.71,-0.71,0,0); // rotate(135deg);
+  transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0); // rotate(135deg);
 
   position: relative;
   top: -3px;
 }
 
-.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = left) {
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =left) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
-  transform: matrix(-0.71,-0.71,0.71,-0.71,0,0); // rotate(-135deg);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0); // rotate(-135deg);
 
   position: relative;
   top: -2px;
@@ -158,6 +134,7 @@
 .mix-1px (@top, @right, @bottom, @left, @color) {
   position: relative;
   @scale: 2;
+
   &:before {
     content: "";
     position: absolute;
@@ -171,15 +148,19 @@
     transform: scale(1 / @scale);
     pointer-events: none;
     z-index: 0;
+
     & when (@top > 0) {
       border-top-width: 1px;
     }
+
     & when (@right > 0) {
       border-right-width: 1px;
     }
+
     & when (@bottom > 0) {
       border-bottom-width: 1px;
     }
+
     & when (@left > 0) {
       border-left-width: 1px;
     }
@@ -199,6 +180,7 @@
  */
 
 .mix-clearfix () {
+
   &:before,
   &:after {
     content: "";
@@ -250,6 +232,7 @@
 // 扩展点击区域
 .extend-click() {
   position: relative;
+
   &:before {
     content: '';
     position: absolute;
@@ -262,6 +245,7 @@
 
 // native scroll
 .scroll() {
-  overflow: auto; /* auto | scroll */
+  overflow: auto;
+  /* auto | scroll */
   -webkit-overflow-scrolling: touch;
 }

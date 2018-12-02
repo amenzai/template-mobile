@@ -63,9 +63,9 @@ function style() {
       cascade: true, //是否美化属性值 默认：true 像这样：
       //-webkit-transform: rotate(45deg);
       //        transform: rotate(45deg);
-      remove: true //是否去掉不必要的前缀 默认：true 
+      remove: true //是否去掉不必要的前缀 默认：true
     }))
-    .pipe($.concat('main.css')) //合并css
+    // .pipe($.concat('main.css')) //合并css
     .pipe(gulp.dest(paths.style.dest))
     .pipe($.connect.reload())
 }
@@ -79,9 +79,9 @@ function styleProd() {
       cascade: true, //是否美化属性值 默认：true 像这样：
       //-webkit-transform: rotate(45deg);
       //        transform: rotate(45deg);
-      remove: true //是否去掉不必要的前缀 默认：true 
+      remove: true //是否去掉不必要的前缀 默认：true
     }))
-    .pipe($.concat('main.css')) //合并css
+    // .pipe($.concat('main.css')) //合并css
     .pipe($.cleanCss()) // 压缩
     .pipe($.rev()) //- 文件名加hash值
     .pipe(gulp.dest(paths.style.dest))
@@ -94,7 +94,7 @@ function script() {
     .pipe($.babel({
       presets: ['env'] // es6编译
     }))
-    .pipe($.concat('main.js')) //合并js
+    // .pipe($.concat('main.js')) //合并js
     .pipe(gulp.dest(paths.script.dest))
     .pipe($.connect.reload())
 }
@@ -105,7 +105,7 @@ function scriptProd() {
       presets: ['env']
     }))
     .pipe($.stripDebug())
-    .pipe($.concat('main.js')) //合并css
+    // .pipe($.concat('main.js')) //合并js
     .pipe($.uglify())
     .pipe($.rev())
     .pipe(gulp.dest(paths.script.dest))
@@ -207,8 +207,8 @@ function watch() {
   gulp.watch(paths.script.src, script);
   gulp.watch(paths.style.src, style);
   gulp.watch(paths.images.src, images);
-  gulp.watch([paths.html.src, paths.template.src], htmlCompile);
-  gulp.watch('src/config/**/*', config);
+  // gulp.watch([paths.html.src, paths.template.src], htmlCompile);
+  gulp.watch('src/common/**/*', config);
 }
 
 const build = gulp.series(clean, config, htmlCompileProd, gulp.parallel(styleProd, scriptProd, lib, imagesProd), revReplace);

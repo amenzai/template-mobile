@@ -1,4 +1,5 @@
 @import 'fn';
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -78,10 +79,7 @@ abbr {
 }
 
 img {
-  border: 0 none;
-  max-width: 100%;
-  vertical-align: top;
-  height: auto;
+  vertical-align: middle;
 }
 
 i,
@@ -185,7 +183,7 @@ keygen,
 legend {
   font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1;
   color: @pageTextC;
   outline: 0;
   border: 0;
@@ -218,15 +216,19 @@ a:hover {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 ::-webkit-input-placeholder {
   color: #C0C4CC;
 }
+
 :-moz-placeholder {
   color: #C0C4CC;
 }
+
 ::-moz-placeholder {
   color: #C0C4CC;
 }
+
 :-ms-input-placeholder {
   color: #C0C4CC;
 }

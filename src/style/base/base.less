@@ -25,23 +25,58 @@
 
 // disabled select
 .user-select-none {
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all （移动端不需要） */
-  -ms-user-select: none;      /* IE 10+ */      
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all （移动端不需要） */
+  -ms-user-select: none;
+  /* IE 10+ */
 }
 
 // 禁止选中
-img { -webkit-touch-callout: none; }
+img {
+  -webkit-touch-callout: none;
+}
+
+// 1px class
+.bd-1px-b {
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.bd-1px-tb {
+  &:before {
+    .setTopLine();
+  }
+
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.bd-1px-l {
+  &:before {
+    .setLeftLine();
+  }
+}
+
+.bd-1px-r {
+  &:after {
+    .setRightLine();
+  }
+}
 
 // 两栏网格
 .gjc-row {
   margin: -5px;
   .mix-clearfix();
+
   .gjc-col {
-      float: left;
-      width: 50%;
-      box-sizing: border-box;
-      padding: 5px;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
   }
 }
 

@@ -1,6 +1,7 @@
 <!-- footer -->
 <footer class="g-footer">
-	footer
+  footer
 </footer>
-<script src="lib/zepto.min.js"></script>
-<script src="js/common.js></script>
+<script type="text/javascript" src="lib/fastclick.js"></script>
+<script type="text/javascript" src="lib/zepto.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>

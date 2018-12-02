@@ -24,6 +24,8 @@
 			tid = setTimeout(() => {
 				rem()
 			}, 300);
-		});
+    });
+    // handle click delay
+    FastClick.attach(document.body);
 	})(document, window);
 </script>

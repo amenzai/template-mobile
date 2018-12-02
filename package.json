@@ -4,8 +4,8 @@
   "author": "amenzai",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev node_modules/.bin/gulp dev",
-    "build": "cross-env NODE_ENV=prod node_modules/.bin/gulp build"
+    "dev": "cross-env NODE_ENV=dev gulp dev",
+    "build": "cross-env NODE_ENV=prod gulp build"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
